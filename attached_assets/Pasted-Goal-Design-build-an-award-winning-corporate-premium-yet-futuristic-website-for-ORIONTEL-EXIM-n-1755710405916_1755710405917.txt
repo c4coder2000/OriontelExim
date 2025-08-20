@@ -1,0 +1,227 @@
+Goal: Design & build an award-winning, corporate-premium yet futuristic website for ORIONTEL EXIM (next-Forbes-100 import/export startup). It must look breathtaking, feel fast, and use Framer Motion with mastery. Visitors should think twice before leaving.
+
+1) Brand essence & voice
+
+Positioning: “Global Trade Excellence — Local Trust Assurance.”
+
+Personality: Boardroom-serious meets future-tech visionary. Confident, precise, regulation-first.
+
+Voice: Short, declarative, numbers-driven. Replace fluff with proof.
+
+2) Visual direction
+
+Theme: Dark, glassy, luminous gradients. Futuristic but executive.
+
+Palette (tokens):
+
+--bg: #0A0A0B (near-black)
+
+--surface: rgba(255,255,255,0.04) glass with subtle borders rgba(255,255,255,0.10)
+
+--primary: #7C3AED (violet) → #00D4FF (cyan) gradient
+
+--accent: #FF4D6D (hot pink) for highlights
+
+--text: #EDEDED (primary), #A3A3A3 (secondary)
+
+Type:
+
+Headlines: Inter/Space Grotesk (tight tracking, bold).
+
+Body: Inter/General Sans, 16–18px, relaxed line-height.
+
+Aesthetic motifs: radiating grid, soft glow orbs, subtle 3D parallax, glass cards with thin hairline borders, depth shadows.
+
+3) Motion philosophy (Framer Motion)
+
+Principles: clean, intentional, physics-aware. 60fps or don’t ship.
+
+Defaults: spring { type: "spring", stiffness: 120, damping: 18 }; fade/slide { duration: 0.6, ease: [0.22,1,0.36,1] }.
+
+Stagger: 0.06–0.12s for lists.
+
+Scroll-trigger: section reveals at 15–25% viewport; parallax layers at 10–20% depth.
+
+Reduced motion: respect prefers-reduced-motion — fall back to fades, disable parallax.
+
+4) Hero concept (impact moment)
+
+Above the fold:
+
+Headline: “Global Trade. Next Velocity.”
+
+Sub: “Compliance-first import/export, automated ops, measurable outcomes.”
+
+Primary CTA: “Book a Consultation” (glow, micro-pulse on hover).
+
+Secondary CTA: “Explore Services”.
+
+Center visual: a luminous 3D globe feel (SVG/WebGL or layered SVG) with animated trade arcs (pulsing dots travel along paths), low-poly longitude lines, and soft gradient glow.
+
+Micro-metrics cluster (right or under):
+
+$120M+ Annual Trade Volume
+
+42 Countries
+
+99.3% On-Time Clearance
+
+< 48h Avg Cross-Border Processing
+
+Motion:
+
+Globe scales from 0.96→1 with gentle spring; arcs animate in sequence; numbers count-up.
+
+5) Infinite partner marquee (flowing, premium)
+
+Requirement: seamless, infinite, horizontal auto-scroll of partner/trust logos, pausing on hover:
+Logos list (sample): DHL, FedEx, UPS, Maersk, MSC, CMA CGM, DP World, PSA, Aramex, DSV, Kuehne+Nagel, “Müller & Phillips” (placeholder), TNT**(legacy)**.
+
+Style: grayscale 70% → color on hover; glass chips; equal vertical rhythm.
+
+Motion: continuous loop (no jump), speed: 40–60px/s, hover pause, click opens partner page (new tab).
+
+Note: mark as “Trusted by logistics leaders” (use “examples” if not contractually partnered).
+
+6) Wireframe (section-by-section)
+
+Navbar (sticky, glass): Left=Logo; Center=Links (About, Services, Solutions, Markets, Case Studies, Leadership, Contact); Right=CTA “Talk to Sales”. Mobile=hamburger with slide-in menu.
+
+Hero (above).
+
+Marquee (partners) (above).
+
+Traction/De-risk section: 4–6 KPI cards; each flips or rises on hover; reveal with stagger on scroll.
+
+Services Grid (4 cards):
+
+Authorized Commodity Trade
+
+Tailored End-to-End Solutions
+
+Digital Trade Hub
+
+Advisory & Compliance
+Hover: icon morph, subtle tilt, gradient stroke.
+
+Solutions by vertical (3–6 tiles): Electronics & ICT, Industrial & MRO, FMCG & Retail… each with regulatory badges (HS-code mastery, audits).
+
+Interactive Markets Map: stylized world map (dark); regions highlight on hover; chips list (Middle East, Europe, North America, South Asia, Africa, Australia, Pakistan Nationwide).
+
+Case Studies (carousel): swipe/drag cards with “Outcome tag” chips (e.g., “−14% landed cost”, “+22% delivery speed”, “NPS 76”).
+
+Digital Trade Hub (product moment): mock analytics dashboard in a glass card; parallax layers; tooltips that animate in on scroll.
+
+Trust & Compliance strip: badges for SECP registration, PSW, Tier-1 banking, ISO placeholders—monochrome, tasteful.
+
+Leadership: Founder card (photo/initials), Advisors list, LinkedIn links.
+
+Final CTA band: bold gradient slab, two CTAs (Book a Call / WhatsApp).
+
+Contact: address, email, phones, simple form (name/email/message), WhatsApp deep link, map pin.
+
+Footer: sitemap, tagline, copyright.
+
+7) Signature interactions (show mastery)
+
+Magnetic buttons: cursor-proximity lift & subtle rotate.
+
+Parallax layers: background grid (slow), glow orbs (slower), foreground content (normal).
+
+Card tilt: 3–5° 3D tilt on hover with shadow bloom.
+
+Counter on view: numerals animate 0 → target using spring; commas included.
+
+Arc paths: trade arcs with traveling dots and easing; random micro-offset so it never feels static.
+
+Marquee: double-row mirrored loop to guarantee seamlessness; GPU translated (transform: translate3d).
+
+Scroll progress bar: thin top bar fills as you scroll.
+
+8) Framer Motion blueprint (variants)
+
+fadeUp: { hidden:{y:24,opacity:0}, show:{y:0,opacity:1, transition:{duration:.6,ease:[0.22,1,0.36,1]} } }
+
+glassCard: { hidden:{scale:.96,opacity:0}, show:{scale:1,opacity:1, transition:{type:'spring',stiffness:120,damping:18}} }
+
+staggerIn: parent { show:{ transition:{ staggerChildren:.08 } } }
+
+parallax: tie to scroll with useScroll/useTransform for y-translate 10–40px across layers.
+
+marquee: CSS keyframes for base loop; FM controls for pause/resume on hover/focus.
+
+9) Accessibility & UX guardrails
+
+Contrast ≥ WCAG AA; focus rings visible.
+
+Keyboard nav through menus, carousels, marquee (pause on focus).
+
+prefers-reduced-motion: disable parallax, long loops; keep essential fades.
+
+Alt text for logos (“DHL logo”), globe marked as decorative if non-essential.
+
+10) Performance budget
+
+LCP < 2.5s, CLS < 0.05, TTI < 3.5s on mid-tier mobile.
+
+Use content-visibility, lazy-load non-critical sections, compress SVGs, optimize logos (SVG/AVIF/WEBP), will-change only where needed.
+
+Minimize layout thrash; prefer transform/opacity.
+
+11) SEO & social
+
+<title> under 60 chars; meta description 150–160.
+
+OpenGraph + Twitter cards (hero image with globe + gradient).
+
+Organization schema (SECP registration mention), BreadcrumbList.
+
+Favicon set & theme-color meta.
+
+12) Analytics & conversions
+
+Track CTA clicks (header/footer/hero), partner logo clicks, case card views, contact form submits, WhatsApp click-through.
+
+Heatmap/scroll depth optional. Route events to GA4/Segment.
+
+13) Copy blocks (starter)
+
+Hero H1: “Global Trade. Next Velocity.”
+
+Sub: “Tech-powered import/export with compliance at the core.”
+
+CTA primary: “Book a Consultation”
+
+Traction lead: “Numbers that de-risk your decision.”
+
+Services lead: “From PO to Proof of Delivery—fully orchestrated.”
+
+Final CTA: “Let’s move your goods—and your KPIs.”
+
+14) Legal & disclaimers
+
+If partner logos aren’t contracted, label “Selected logistics leaders (illustrative)”.
+
+Privacy & terms linked in footer; consent text under form.
+
+15) Deliverables checklist
+
+Responsive page (XS→XL), dark-first theme.
+
+Component library: Nav, Button, Badge, KPI Card, Feature Card, Case Card, Marquee, Map, Contact Form.
+
+Design tokens (colors, radii, shadows, spacing).
+
+Framer Motion variants documented; reduced-motion styles added.
+
+Ready for import to Framer or deploy with Next.js + Tailwind + Framer Motion.
+
+(Optional) micro-spec for developer handoff
+
+Hero Globe: layered SVG with 12–18 longitude/latitude lines; 6–12 bezier arcs with gradient stroke; animated dashoffset; particle dots (2–3px) traveling with useAnimationControls.
+
+Marquee: two identical ULs of logos, translateX loop via CSS keyframes; FM pauses on hover (set animationPlayState: 'paused').
+
+KPIs: react-countup or FM custom frame loop.
+
+Parallax: useScroll({ target: sectionRef, offset: ['start end','end start'] }) + useTransform to map to y
