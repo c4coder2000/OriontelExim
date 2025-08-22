@@ -38,7 +38,7 @@ const socialLinks = [
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
+
     // Track scroll to top
     fetch("/api/analytics", {
       method: "POST",
@@ -69,7 +69,7 @@ export default function Footer() {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-    
+
     // Track footer navigation
     fetch("/api/analytics", {
       method: "POST",
@@ -113,29 +113,32 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-3"
               whileHover={{ scale: 1.02 }}
               data-testid="footer-logo"
             >
-              <img 
-                src="/attached_assets/WhatsApp Image 2025-08-22 at 07.37.51_91f713b4_1755830297134.jpg" 
-                alt="ORIONTEL EXIM Logo" 
+              <img
+                src="https://i.ibb.co/Hf5NmGS8/Whats-App-Image-2025-08-22-at-07-37-51-91f713b4.jpg"
+                alt="ORIONTEL EXIM Logo"
                 className="w-10 h-10 object-contain"
               />
               <span className="font-space font-bold text-2xl text-text-primary">
                 ORIONTEL EXIM
               </span>
             </motion.div>
-            
+
             <p className="text-text-secondary leading-relaxed max-w-md">
-              ORIONTEL EXIM (SMC-Private) Limited is your trusted partner in modern trade solutions, seamlessly connecting Pakistani businesses with international markets. Driven by legal compliance, operational integrity, and global best practices.
+              ORIONTEL EXIM (SMC-Private) Limited is your trusted partner in
+              modern trade solutions, seamlessly connecting Pakistani businesses
+              with international markets. Driven by legal compliance,
+              operational integrity, and global best practices.
             </p>
-            
+
             <div className="flex items-center space-x-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
-                
+
                 return (
                   <motion.a
                     key={social.label}
@@ -149,7 +152,11 @@ export default function Footer() {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
+                    transition={{
+                      delay: 0.3 + index * 0.1,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
                     data-testid={`footer-social-${social.label.toLowerCase()}`}
                   >
                     <Icon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
@@ -166,7 +173,9 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <h3 className="text-lg font-semibold text-text-primary mb-6">Services</h3>
+            <h3 className="text-lg font-semibold text-text-primary mb-6">
+              Services
+            </h3>
             <ul className="space-y-4">
               {services.map((service, index) => (
                 <motion.li
@@ -179,7 +188,7 @@ export default function Footer() {
                   <button
                     onClick={() => handleLinkClick(service.href, "services")}
                     className="text-text-secondary hover:text-text-primary transition-colors hover:translate-x-1 transform duration-200"
-                    data-testid={`footer-service-${service.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    data-testid={`footer-service-${service.label.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {service.label}
                   </button>
@@ -195,7 +204,9 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <h3 className="text-lg font-semibold text-text-primary mb-6">Company</h3>
+            <h3 className="text-lg font-semibold text-text-primary mb-6">
+              Company
+            </h3>
             <ul className="space-y-4">
               {company.map((item, index) => (
                 <motion.li
@@ -208,7 +219,7 @@ export default function Footer() {
                   <button
                     onClick={() => handleLinkClick(item.href, "company")}
                     className="text-text-secondary hover:text-text-primary transition-colors hover:translate-x-1 transform duration-200"
-                    data-testid={`footer-company-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    data-testid={`footer-company-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {item.label}
                   </button>
@@ -227,7 +238,9 @@ export default function Footer() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-4">Contact Information</h3>
+            <h3 className="text-lg font-semibold text-text-primary mb-4">
+              Contact Information
+            </h3>
             <div className="space-y-2 text-text-secondary">
               <p>Empire Plaza, II-B-II-2R-34/RH/SH</p>
               <p>Machine Mohallah No.3, Jhelum, Punjab</p>
@@ -260,7 +273,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-4">Business Hours</h3>
+            <h3 className="text-lg font-semibold text-text-primary mb-4">
+              Business Hours
+            </h3>
             <div className="space-y-2 text-text-secondary">
               <p>Monday - Friday: 9:00 AM - 6:00 PM (PKT)</p>
               <p>Saturday: 9:00 AM - 2:00 PM (PKT)</p>
@@ -285,9 +300,10 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            © {new Date().getFullYear()} ORIONTEL EXIM (SMC-Private). All rights reserved. | Registered with SECP since June 12, 2025
+            © {new Date().getFullYear()} ORIONTEL EXIM (SMC-Private). All
+            rights reserved. | Registered with SECP since June 12, 2025
           </motion.div>
-          
+
           <motion.div
             className="flex items-center space-x-6 text-sm"
             initial={{ opacity: 0 }}
@@ -306,7 +322,7 @@ export default function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.8 + index * 0.05, duration: 0.4 }}
-                data-testid={`footer-legal-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid={`footer-legal-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {item.label}
               </motion.a>
@@ -330,7 +346,8 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 1, duration: 0.6 }}
             >
-              Empowering global trade through technology and compliance excellence
+              Empowering global trade through technology and compliance
+              excellence
             </motion.p>
             <motion.div
               className="w-24 h-px bg-gradient-to-r from-transparent via-primary-start to-transparent mx-auto"

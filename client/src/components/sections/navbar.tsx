@@ -46,14 +46,14 @@ export default function Navbar() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
             data-testid="logo"
           >
-            <img 
-              src="/attached_assets/WhatsApp Image 2025-08-22 at 07.37.51_91f713b4_1755830297134.jpg" 
-              alt="ORIONTEL EXIM Logo" 
+            <img
+              src="https://i.ibb.co/Hf5NmGS8/Whats-App-Image-2025-08-22-at-07-37-51-91f713b4.jpg"
+              alt="ORIONTEL EXIM Logo"
               className="w-10 h-10 object-contain"
             />
             <span className="font-space font-bold text-xl text-text-primary">
@@ -71,7 +71,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
+                data-testid={`nav-link-${link.label.toLowerCase().replace(" ", "-")}`}
               >
                 {link.label}
               </motion.button>
@@ -80,7 +80,7 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <MagneticButton 
+            <MagneticButton
               className="gradient-bg text-white"
               testId="nav-cta-talk-to-sales"
               onClick={() => handleNavClick("#contact")}
@@ -142,7 +142,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
+                  data-testid={`mobile-nav-link-${link.label.toLowerCase().replace(" ", "-")}`}
                 >
                   {link.label}
                 </motion.button>
@@ -153,7 +153,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.05 }}
               >
-                <MagneticButton 
+                <MagneticButton
                   className="gradient-bg text-white w-full"
                   testId="mobile-nav-cta-talk-to-sales"
                   onClick={() => handleNavClick("#contact")}

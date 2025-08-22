@@ -3,11 +3,23 @@ import Marquee from "@/components/ui/marquee";
 
 const partners = [
   { name: "DHL", logo: "https://cdn.worldvectorlogo.com/logos/dhl-1.svg" },
-  { name: "FedEx", logo: "https://cdn.worldvectorlogo.com/logos/fedex-logo.svg" },
-  { name: "UPS", logo: "https://cdn.worldvectorlogo.com/logos/ups-united-parcel-service.svg" },
-  { name: "Maersk", logo: "https://cdn.worldvectorlogo.com/logos/maersk.svg" },
+  {
+    name: "FedEx",
+    logo: "https://static.vecteezy.com/system/resources/previews/020/335/975/original/fedex-logo-fedex-icon-free-free-vector.jpg",
+  },
+  {
+    name: "UPS",
+    logo: "https://cdn.worldvectorlogo.com/logos/ups-united-parcel-service.svg",
+  },
+  {
+    name: "Maersk",
+    logo: "https://www.dafont.com/forum/attach/orig/1/2/12616.gif",
+  },
   { name: "MSC", logo: "https://cdn.worldvectorlogo.com/logos/msc-1.svg" },
-  { name: "Aramex", logo: "https://cdn.worldvectorlogo.com/logos/aramex.svg" },
+  {
+    name: "Aramex",
+    logo: "https://planetexpress.com/wp-content/uploads/2017/10/aramex.png",
+  },
 ];
 
 export default function PartnerMarquee() {
@@ -26,7 +38,7 @@ export default function PartnerMarquee() {
   return (
     <section className="py-12 border-t border-b border-surface-border">
       <div className="container mx-auto px-6 text-center mb-8">
-        <motion.p 
+        <motion.p
           className="text-text-secondary"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

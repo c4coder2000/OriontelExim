@@ -5,8 +5,10 @@ const leaders = [
   {
     name: "Asif Rehman",
     role: "Founder & CEO / Director",
-    description: "A visionary entrepreneur and international trade strategist, Mr. Rehman leads ORIONTEL EXIM with a passion for regulatory excellence, technological innovation, and client-centric performance. His leadership ensures measurable results for partners in both local and global markets.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    description:
+      "A visionary entrepreneur and international trade strategist, Mr. Rehman leads ORIONTEL EXIM with a passion for regulatory excellence, technological innovation, and client-centric performance. His leadership ensures measurable results for partners in both local and global markets.",
+    image:
+      "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
     linkedin: "#",
   },
 ];
@@ -62,7 +64,8 @@ export default function Leadership() {
             Leadership Team
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Seasoned executives with decades of experience in global trade, logistics, and regulatory compliance.
+            Seasoned executives with decades of experience in global trade,
+            logistics, and regulatory compliance.
           </p>
         </motion.div>
 
@@ -83,7 +86,7 @@ export default function Leadership() {
                 rotateX: 2,
                 rotateY: 2,
               }}
-              data-testid={`leader-card-${leader.name.toLowerCase().replace(/\s+/g, '-')}`}
+              data-testid={`leader-card-${leader.name.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <motion.img
                 src={leader.image}
@@ -93,8 +96,8 @@ export default function Leadership() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
               />
-              
-              <motion.h3 
+
+              <motion.h3
                 className="text-xl font-bold text-text-primary mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -102,8 +105,8 @@ export default function Leadership() {
               >
                 {leader.name}
               </motion.h3>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-primary-start font-medium mb-3"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -111,8 +114,8 @@ export default function Leadership() {
               >
                 {leader.role}
               </motion.p>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-text-secondary text-sm mb-4 leading-relaxed"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -120,13 +123,13 @@ export default function Leadership() {
               >
                 {leader.description}
               </motion.p>
-              
+
               <motion.button
                 className="inline-flex items-center text-text-secondary hover:text-primary-start transition-colors group/link"
                 onClick={() => handleLinkedInClick(leader.name)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid={`leader-linkedin-${leader.name.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid={`leader-linkedin-${leader.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -141,7 +144,8 @@ export default function Leadership() {
               <motion.div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"
                 style={{
-                  background: "radial-gradient(circle at center, var(--primary-start), transparent 70%)",
+                  background:
+                    "radial-gradient(circle at center, var(--primary-start), transparent 70%)",
                 }}
               />
             </motion.div>
