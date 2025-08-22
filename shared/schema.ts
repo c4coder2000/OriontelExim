@@ -8,6 +8,7 @@ export const contacts = pgTable("contacts", {
   name: text("name").notNull(),
   company: text("company"),
   email: text("email").notNull(),
+  phone: text("phone"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -16,6 +17,7 @@ export const insertContactSchema = createInsertSchema(contacts).pick({
   name: true,
   company: true,
   email: true,
+  phone: true,
   message: true,
 }).extend({
   email: z.string().email("Please enter a valid email address"),

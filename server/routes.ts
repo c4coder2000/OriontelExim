@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { z } from "zod";
+import { sendEmail, createContactEmailTemplate } from "./sendgrid";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -10,13 +11,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       
-      // In a real application, you would:
-      // 1. Save to database: const contact = await storage.createContact(validatedData);
-      // 2. Send email notification
-      // 3. Integrate with CRM system
+      // Create email template
+      const emailTemplate = createContactEmailTemplate({
+        name: validatedData.name,
+        email: validatedData.email,
+        company: validatedData.company || undefined,
+        phone: validatedData.phone || undefined,
+        message: validatedData.message
+      });
       
-      // For now, we'll just log and return success
-      console.log("Contact form submission:", validatedData);
+      // Send email to company
+      const emailSent = await sendEmail({
+        to: "oriontelexim@gmail.com",
+        from: "noreply@oriontelexim.com", // This should be a verified sender domain
+        subject: `New Contact Form Submission - ${validatedData.name}`,
+        text: emailTemplate.text,
+        html: emailTemplate.html
+      });
+      
+      if (!emailSent) {
+        console.error("Failed to send email notification");
+      }
+      
+      // Log for monitoring
+      console.log("Contact form submission:", {
+        name: validatedData.name,
+        email: validatedData.email,
+        company: validatedData.company,
+        emailSent,
+        timestamp: new Date().toISOString()
+      });
       
       res.json({ 
         success: true, 

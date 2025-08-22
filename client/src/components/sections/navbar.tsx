@@ -51,9 +51,11 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             data-testid="logo"
           >
-            <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">O</span>
-            </div>
+            <img 
+              src="/attached_assets/WhatsApp Image 2025-08-22 at 07.37.51_91f713b4_1755830297134.jpg" 
+              alt="ORIONTEL EXIM Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="font-space font-bold text-xl text-text-primary">
               ORIONTEL EXIM
             </span>

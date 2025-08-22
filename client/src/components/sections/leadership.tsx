@@ -3,24 +3,10 @@ import { Linkedin } from "lucide-react";
 
 const leaders = [
   {
-    name: "Ahmed Hassan",
-    role: "Founder & CEO",
-    description: "15+ years in international trade with expertise in Middle East and South Asian markets.",
+    name: "Asif Rehman",
+    role: "Founder & CEO / Director",
+    description: "A visionary entrepreneur and international trade strategist, Mr. Rehman leads ORIONTEL EXIM with a passion for regulatory excellence, technological innovation, and client-centric performance. His leadership ensures measurable results for partners in both local and global markets.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-  },
-  {
-    name: "Sarah Chen",
-    role: "Director of Operations",
-    description: "Former logistics executive at DHL with expertise in supply chain optimization.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b9bc6615?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-  },
-  {
-    name: "Michael Roberts",
-    role: "Head of Compliance",
-    description: "International trade law specialist with 20+ years in customs and regulatory affairs.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
     linkedin: "#",
   },
 ];

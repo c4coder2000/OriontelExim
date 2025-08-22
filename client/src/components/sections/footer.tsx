@@ -118,16 +118,18 @@ export default function Footer() {
               whileHover={{ scale: 1.02 }}
               data-testid="footer-logo"
             >
-              <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">O</span>
-              </div>
+              <img 
+                src="/attached_assets/WhatsApp Image 2025-08-22 at 07.37.51_91f713b4_1755830297134.jpg" 
+                alt="ORIONTEL EXIM Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-space font-bold text-2xl text-text-primary">
                 ORIONTEL EXIM
               </span>
             </motion.div>
             
             <p className="text-text-secondary leading-relaxed max-w-md">
-              Global Trade Excellence — Local Trust Assurance. Technology-powered import/export solutions with compliance at the core.
+              ORIONTEL EXIM (SMC-Private) Limited is your trusted partner in modern trade solutions, seamlessly connecting Pakistani businesses with international markets. Driven by legal compliance, operational integrity, and global best practices.
             </p>
             
             <div className="flex items-center space-x-4">
@@ -227,23 +229,32 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-text-primary mb-4">Contact Information</h3>
             <div className="space-y-2 text-text-secondary">
-              <p>123 Business District</p>
-              <p>Karachi, Pakistan</p>
+              <p>Empire Plaza, II-B-II-2R-34/RH/SH</p>
+              <p>Machine Mohallah No.3, Jhelum, Punjab</p>
+              <p>Pakistan - 49600</p>
               <motion.a
-                href="mailto:contact@oriontel-exim.com"
+                href="mailto:oriontelexim@gmail.com"
                 className="block hover:text-text-primary transition-colors"
                 whileHover={{ x: 5 }}
                 data-testid="footer-email"
               >
-                contact@oriontel-exim.com
+                oriontelexim@gmail.com
               </motion.a>
               <motion.a
-                href="tel:+92213456789"
+                href="tel:+923002711881"
                 className="block hover:text-text-primary transition-colors"
                 whileHover={{ x: 5 }}
                 data-testid="footer-phone"
               >
-                +92-21-3456-7890
+                +92 300 2711881
+              </motion.a>
+              <motion.a
+                href="tel:+923332711881"
+                className="block hover:text-text-primary transition-colors"
+                whileHover={{ x: 5 }}
+                data-testid="footer-phone-2"
+              >
+                +92 333 2711881
               </motion.a>
             </div>
           </div>
@@ -274,7 +285,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            © {new Date().getFullYear()} ORIONTEL EXIM. All rights reserved.
+            © {new Date().getFullYear()} ORIONTEL EXIM (SMC-Private). All rights reserved. | Registered with SECP since June 12, 2025
           </motion.div>
           
           <motion.div

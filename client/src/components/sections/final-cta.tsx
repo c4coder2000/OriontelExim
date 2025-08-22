@@ -22,7 +22,7 @@ export default function FinalCTA() {
 
   const handleWhatsApp = () => {
     // WhatsApp deep link with pre-filled message
-    const phoneNumber = "923001234567"; // Replace with actual number
+    const phoneNumber = "923002711881"; // ORIONTEL EXIM main number
     const message = encodeURIComponent(
       "Hi! I'm interested in ORIONTEL EXIM's global trade solutions. I'd like to discuss my import/export requirements."
     );

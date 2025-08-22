@@ -15,20 +15,20 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Office Address",
-    details: "123 Business District, Karachi, Pakistan",
-    link: "https://maps.google.com/?q=Karachi+Business+District",
+    details: "Empire Plaza, II-B-II-2R-34/RH/SH, Machine Mohallah No.3, Jhelum, Punjab, Pakistan - 49600",
+    link: "https://maps.google.com/?q=Empire+Plaza+Jhelum+Punjab+Pakistan",
   },
   {
     icon: Mail,
     title: "Email",
-    details: "contact@oriontel-exim.com",
-    link: "mailto:contact@oriontel-exim.com",
+    details: "oriontelexim@gmail.com",
+    link: "mailto:oriontelexim@gmail.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    details: "+92-21-3456-7890",
-    link: "tel:+92213456789",
+    details: "+92 300 2711881 | +92 333 2711881",
+    link: "tel:+923002711881",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function Contact() {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = "923001234567"; // Replace with actual number
+    const phoneNumber = "923002711881"; // ORIONTEL EXIM main number
     const message = encodeURIComponent(
       "Hi! I'm interested in ORIONTEL EXIM's global trade solutions. I'd like to discuss my requirements."
     );
