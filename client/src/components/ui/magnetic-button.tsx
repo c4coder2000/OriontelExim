@@ -52,24 +52,27 @@ export default function MagneticButton({
 
   return (
     <motion.div style={{ transform }}>
-      <Button
-        ref={ref}
-        className={`transition-all duration-200 hover:scale-105 ${className}`}
-        variant={variant}
-        size={size}
-        onClick={onClick}
-        disabled={disabled}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        data-testid={testId}
+      <motion.div
         whileHover={{ 
           scale: 1.05,
           boxShadow: "0 20px 40px rgba(124, 58, 237, 0.3)",
         }}
         whileTap={{ scale: 0.95 }}
       >
-        {children}
-      </Button>
+        <Button
+          ref={ref}
+          className={`transition-all duration-200 ${className}`}
+          variant={variant}
+          size={size}
+          onClick={onClick}
+          disabled={disabled}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          data-testid={testId}
+        >
+          {children}
+        </Button>
+      </motion.div>
     </motion.div>
   );
 }

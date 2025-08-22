@@ -106,6 +106,7 @@ export default function Globe() {
               style={{
                 background: "linear-gradient(135deg, #7C3AED, #00D4FF)",
                 boxShadow: "0 0 10px #7C3AED",
+                offsetPath: `path("M 0 100 Q 100 0 200 100")`,
               }}
               animate={{
                 offsetDistance: ["0%", "100%"],
@@ -115,9 +116,6 @@ export default function Globe() {
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: arc.delay,
-              }}
-              style={{
-                offsetPath: `path("M 0 100 Q 100 0 200 100")`,
               }}
             />
           </motion.div>
