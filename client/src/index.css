@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 :root {
+  /* ORIONTEL EXIM Brand Colors */
   --bg-primary: hsl(240, 10%, 4%);
   --surface: hsla(0, 0%, 100%, 0.04);
   --surface-border: hsla(0, 0%, 100%, 0.1);
@@ -13,8 +14,8 @@
   --accent: hsl(346, 100%, 64%);
   --text-primary: hsl(0, 0%, 93%);
   --text-secondary: hsl(0, 0%, 64%);
-  --border-color: hsla(0, 0%, 100%, 0.1);
-
+  
+  /* Base shadcn colors adapted for dark theme */
   --background: hsl(240, 10%, 4%);
   --foreground: hsl(0, 0%, 93%);
   --card: hsla(0, 0%, 100%, 0.04);
@@ -31,6 +32,7 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsla(0, 0%, 100%, 0.1);
   --input: hsla(0, 0%, 100%, 0.04);
   --ring: hsl(261, 73%, 57%);
   --chart-1: hsl(261, 73%, 57%);
@@ -39,6 +41,8 @@
   --chart-4: hsl(120, 100%, 40%);
   --chart-5: hsl(30, 100%, 50%);
   --radius: 0.75rem;
+  
+  /* Typography */
   --font-inter: 'Inter', sans-serif;
   --font-space: 'Space Grotesk', sans-serif;
 }
@@ -60,14 +64,35 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border-color: hsla(0, 0%, 100%, 0.1);
+  --border: hsla(0, 0%, 100%, 0.1);
   --input: hsla(0, 0%, 100%, 0.04);
   --ring: hsl(261, 73%, 57%);
 }
 
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
+  }
+  .text-foreground {
+    color: var(--foreground);
+  }
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  .font-space {
+    font-family: var(--font-space);
+  }
+  .text-gradient {
+    @apply gradient-text;
+  }
+  .bg-gradient {
+    @apply gradient-bg;
+  }
+}
+
 @layer base {
   * {
-    border-color: var(--border-color);
+    @apply border-border;
   }
 
   html {
