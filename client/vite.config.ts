@@ -25,6 +25,7 @@ export default defineConfig({
         "drizzle-orm/sqlite-core",
         "drizzle-orm/mysql-core",
         "drizzle-zod",
+        "zod",
       ],
     },
   },
