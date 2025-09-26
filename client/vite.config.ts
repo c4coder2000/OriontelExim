@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    // Cartographer plugin removed for Vercel compatibility
   ],
   resolve: {
     alias: {
@@ -19,6 +18,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    rollupOptions: {
+      external: ["drizzle-orm"],
+    },
   },
   server: {
     fs: {
