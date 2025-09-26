@@ -19,7 +19,12 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      external: ["drizzle-orm"],
+      external: [
+        "drizzle-orm",
+        "drizzle-orm/pg-core",
+        "drizzle-orm/sqlite-core",
+        "drizzle-orm/mysql-core",
+      ],
     },
   },
   server: {
