@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "client": {
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist",
+      "rootDirectory": "client"
+    }
+  }
+}
