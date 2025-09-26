@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 :root {
-  /* ORIONTEL EXIM Brand Colors */
   --bg-primary: hsl(240, 10%, 4%);
   --surface: hsla(0, 0%, 100%, 0.04);
   --surface-border: hsla(0, 0%, 100%, 0.1);
@@ -14,8 +13,8 @@
   --accent: hsl(346, 100%, 64%);
   --text-primary: hsl(0, 0%, 93%);
   --text-secondary: hsl(0, 0%, 64%);
-  
-  /* Base shadcn colors adapted for dark theme */
+  --border-color: hsla(0, 0%, 100%, 0.1);
+
   --background: hsl(240, 10%, 4%);
   --foreground: hsl(0, 0%, 93%);
   --card: hsla(0, 0%, 100%, 0.04);
@@ -32,7 +31,6 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsla(0, 0%, 100%, 0.1);
   --input: hsla(0, 0%, 100%, 0.04);
   --ring: hsl(261, 73%, 57%);
   --chart-1: hsl(261, 73%, 57%);
@@ -41,8 +39,6 @@
   --chart-4: hsl(120, 100%, 40%);
   --chart-5: hsl(30, 100%, 50%);
   --radius: 0.75rem;
-  
-  /* Typography */
   --font-inter: 'Inter', sans-serif;
   --font-space: 'Space Grotesk', sans-serif;
 }
@@ -64,27 +60,27 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsla(0, 0%, 100%, 0.1);
+  --border-color: hsla(0, 0%, 100%, 0.1);
   --input: hsla(0, 0%, 100%, 0.04);
   --ring: hsl(261, 73%, 57%);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--border-color);
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter);
     background-color: var(--bg-primary);
     color: var(--text-primary);
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-space);
     font-weight: 700;
@@ -99,7 +95,7 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
-  
+
   .gradient-text {
     background: linear-gradient(135deg, var(--primary-start) 0%, var(--primary-end) 100%);
     -webkit-background-clip: text;
@@ -107,11 +103,11 @@
     background-clip: text;
     color: transparent;
   }
-  
+
   .gradient-bg {
     background: linear-gradient(135deg, var(--primary-start) 0%, var(--primary-end) 100%);
   }
-  
+
   .grid-pattern {
     background-image: 
       radial-gradient(circle at 25% 25%, hsla(261, 73%, 57%, 0.1) 0%, transparent 50%),
@@ -120,30 +116,30 @@
       linear-gradient(90deg, transparent 24%, hsla(0, 0%, 100%, 0.02) 25%, hsla(0, 0%, 100%, 0.02) 26%, transparent 27%, transparent 74%, hsla(0, 0%, 100%, 0.02) 75%, hsla(0, 0%, 100%, 0.02) 76%, transparent 77%);
     background-size: 50px 50px;
   }
-  
+
   .glow-orb {
     background: radial-gradient(circle, hsla(261, 73%, 57%, 0.3) 0%, hsla(194, 100%, 50%, 0.2) 50%, transparent 70%);
     filter: blur(20px);
   }
-  
+
   .card-tilt {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .card-tilt:hover {
     transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
     box-shadow: 0 25px 50px hsla(0, 0%, 0%, 0.3), 0 0 50px hsla(261, 73%, 57%, 0.1);
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scroll-progress {
     position: fixed;
     top: 0;
@@ -160,19 +156,20 @@
   .font-inter {
     font-family: var(--font-inter);
   }
-  
+
   .font-space {
     font-family: var(--font-space);
   }
-  
+
   .text-gradient {
     @apply gradient-text;
   }
-  
+
   .bg-gradient {
     @apply gradient-bg;
   }
 }
+
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
