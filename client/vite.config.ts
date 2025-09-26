@@ -11,23 +11,13 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@shared": path.resolve(__dirname, "../shared"),
       "@assets": path.resolve(__dirname, "../attached_assets"),
+      // Removed "@shared" to avoid importing backend-only modules like drizzle-orm or zod
     },
   },
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    rollupOptions: {
-      external: [
-        "drizzle-orm",
-        "drizzle-orm/pg-core",
-        "drizzle-orm/sqlite-core",
-        "drizzle-orm/mysql-core",
-        "drizzle-zod",
-        "zod",
-      ],
-    },
   },
   server: {
     fs: {
